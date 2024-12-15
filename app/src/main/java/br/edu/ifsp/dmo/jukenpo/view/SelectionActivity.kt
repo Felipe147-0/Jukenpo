@@ -13,6 +13,7 @@ import br.edu.ifsp.dmo.jukenpo.model.Scissors
 import br.edu.ifsp.dmo.jukenpo.model.Weapon
 
 class SelectionActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var binding: ActivitySelectionBinding
     private var number: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +30,13 @@ class SelectionActivity : AppCompatActivity(), View.OnClickListener {
         // Esconder a barra de ferramentas
         actionBar?.hide()
         // Apresentar mensagem
-        binding.textviewMessage.text = "$name$
-        {getString(R.string.choose_gum)}"
+        binding.textviewMessage.text = "$name ${ getString(R.string.choose_gum) }"
         // Configurar os listener
         binding.buttonPaper.setOnClickListener(this)
         binding.buttonRock.setOnClickListener(this)
         binding.buttonScissors.setOnClickListener(this)
     }
+
     override fun onClick(v: View) {
         val weapon = when {
             v == binding.buttonRock -> Rock
@@ -45,6 +46,7 @@ class SelectionActivity : AppCompatActivity(), View.OnClickListener {
         }
         handleResult(weapon)
     }
+
     private fun handleResult(weapon: Weapon?) {
         if (weapon == null) {
             setResult(RESULT_CANCELED)

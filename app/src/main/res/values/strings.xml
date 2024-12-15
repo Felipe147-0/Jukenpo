@@ -15,4 +15,5 @@
     <string name="name_of_player">Nome do competidor</string>
     <string name="kind_of_game">Tipo de jogo</string>
     <string name="start_game">Iniciar Jogo</string>
+    <string name="start_bot">Jogar com bot</string>
 </resources>

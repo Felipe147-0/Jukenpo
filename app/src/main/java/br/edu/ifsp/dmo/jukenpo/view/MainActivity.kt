@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun configListener() {
         binding.buttonStart.setOnClickListener { startGame() }
+        binding.buttonBotBattle.setOnClickListener { startBotGame() }
     }
     private fun configSpinner() {
         val adapter = ArrayAdapter<String>(
@@ -28,25 +29,34 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_dropdown_item,
             resources.getStringArray(R.array.tipos_jogos)
         )
-        binding.spinnerButtles.adapter = adapter
+        binding.spinnerBattles.adapter = adapter
     }
     private fun configToolBar() {
         // Esconder a ActionBar se ela existir no tema.
         supportActionBar?.hide()
     }
     private fun startGame() {
-        val battles: Int = when
-                                   (binding.spinnerButtles.selectedItemPosition) {
+        val battles: Int = when (binding.spinnerBattles.selectedItemPosition) {
             0 -> 1
             1 -> 3
             else -> 5
         }
         val mIntent = Intent(this, WarActivity::class.java)
-        mIntent.putExtra(
-            Constants.KEY_PLAYER_1,
-            binding.edittextPlayer1.text.toString())
-        mIntent.putExtra(Constants.KEY_PLAYER_2,
-            binding.edittextPlayer2.text.toString())
+        mIntent.putExtra(Constants.KEY_PLAYER_1, binding.edittextPlayer1.text.toString())
+        mIntent.putExtra(Constants.KEY_PLAYER_2, binding.edittextPlayer2.text.toString())
+        mIntent.putExtra(Constants.KEY_ROUNDS, battles)
+        startActivity(mIntent)
+    }
+
+    private fun startBotGame() {
+        val battles: Int = when (binding.spinnerBattles.selectedItemPosition) {
+            0 -> 1
+            1 -> 3
+            else -> 5
+        }
+        val mIntent = Intent(this, WarActivity::class.java)
+        mIntent.putExtra(Constants.KEY_PLAYER_1, binding.edittextPlayer1.text.toString())
+        mIntent.putExtra(Constants.KEY_PLAYER_2, binding.edittextPlayer2.text.toString())
         mIntent.putExtra(Constants.KEY_ROUNDS, battles)
         startActivity(mIntent)
     }

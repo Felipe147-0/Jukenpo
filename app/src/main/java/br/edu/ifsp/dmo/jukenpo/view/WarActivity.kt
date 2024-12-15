@@ -66,7 +66,7 @@ class WarActivity : AppCompatActivity() {
             weaponPlayer1 = null
             weaponPlayer2 = null
             updateScoreBoard()
-            if (!war.has_buttles()) {
+            if (!war.has_battles()) {
                 proclaimWinner()
             }
         } else {

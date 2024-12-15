@@ -11,7 +11,9 @@ import br.edu.ifsp.dmo.jukenpo.model.Constants
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         mIntent.putExtra(Constants.KEY_PLAYER_1, binding.edittextPlayer1.text.toString())
         mIntent.putExtra(Constants.KEY_PLAYER_2, binding.edittextPlayer2.text.toString())
         mIntent.putExtra(Constants.KEY_ROUNDS, battles)
+        mIntent.putExtra(Constants.KEY_BOT, true)
         startActivity(mIntent)
     }
 }

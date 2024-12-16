@@ -163,10 +163,11 @@ class WarActivity : AppCompatActivity() {
 
     private fun botWeapon() : Weapon {
         val random = (0..2).random()
+
         return when (random) {
-            0 -> Rock
+            0 -> Scissors
             1 -> Paper
-            else -> Scissors
+            else -> Rock
         }
     }
 }

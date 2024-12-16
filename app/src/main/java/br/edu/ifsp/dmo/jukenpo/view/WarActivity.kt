@@ -75,11 +75,7 @@ class WarActivity : AppCompatActivity() {
             } else {
                 war.opponent2.name
             }
-            Toast.makeText(
-                this,
-                "$name${getString(R.string.chhose_gum_player)}",
-                Toast.LENGTH_LONG
-            ).show()
+            Toast.makeText(this, "$name${getString(R.string.chhose_gum_player)}", Toast.LENGTH_LONG).show()
         }
     }
 

@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         mIntent.putExtra(Constants.KEY_PLAYER_1, binding.edittextPlayer1.text.toString())
         mIntent.putExtra(Constants.KEY_PLAYER_2, binding.edittextPlayer2.text.toString())
         mIntent.putExtra(Constants.KEY_ROUNDS, battles)
+        mIntent.putExtra(Constants.KEY_BOT, false)
         startActivity(mIntent)
     }
 
